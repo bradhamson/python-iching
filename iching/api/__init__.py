@@ -1,4 +1,3 @@
-from importlib.resources import Resource
 from flask import Flask
 from flask_restful import Api
 
@@ -16,5 +15,8 @@ class AppFactory:
             app = Flask(__name__)
             app.config.from_object(configs[env])
             api = Api(app)
-            # api.add_resource()
+            api.add_resource(Line, '/line/')
+            api.add_resource(Trigram, '/trigram/')
+            api.add_resource(Hexagram, '/hexagram/')
             return app
+ 
