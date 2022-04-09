@@ -28,7 +28,7 @@ class Hexagram(Resource):
     def get(self) -> dict:
         if not self.changing_lines:
             self.changing_lines = None
-        return{
+        return {
             'title': self.title,
             'symbol': self.symbol,
             'upper_trigram': {
